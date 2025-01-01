@@ -27,7 +27,8 @@ CsvToHtmlTable = {
                 var csvHeaderRow = csvData[0];
                 var $tableHeadRow = $("<tr></tr>");
                 for (var headerIdx = 0; headerIdx < csvHeaderRow.length; headerIdx++) {
-                    $tableHeadRow.append($("<th></th>").text(csvHeaderRow[headerIdx]));
+                    var headerText = csvHeaderRow[headerIdx].replace(/_/g, ' ');
+                    $tableHeadRow.append($("<th></th>").text(headerText));
                 }
                 $tableHead.append($tableHeadRow);
 
